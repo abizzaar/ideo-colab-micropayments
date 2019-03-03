@@ -1,0 +1,97 @@
+<head>
+  <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="UI-Card-master/card.min.css"/>
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+  <script type='text/javascript'>    
+
+    var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1c4JRC3gRTVN-VrMwGg3mHKp86M4FaFDGHWD-QyaYJCA/edit?usp=sharing';
+  // https://docs.google.com/spreadsheets/d/1c4JRC3gRTVN-VrMwGg3mHKp86M4FaFDGHWD-QyaYJCA/edit?usp=sharing
+    function init() {
+      Tabletop.init( { key: publicSpreadsheetUrl,
+                       callback: showInfo,
+                       simpleSheet: true } )
+    }
+  
+    function showInfo(data, tabletop) {
+      document.getElementById("fashion").innerHTML = "Your engagement: " + data[0]["Engagement"] + "%";
+      document.getElementById("travel").innerHTML = "Your engagement: " + data[1]["Engagement"] + "%";
+      document.getElementById("wedding").innerHTML = "Your engagement: " + data[2]["Engagement"] + "%";
+    }
+    
+  
+    window.addEventListener('DOMContentLoaded', init)
+  </script>
+
+</head>
+<body>
+    <div class="ui cards" style="margin:auto">
+        <a class="card" target="_blank" href="https://www.flickr.com/groups/fashionphotography/pool/">
+          <div class="image">
+              <img src="images/fashion/2.jpg" style="height:200px">
+          </div>
+          <div class="content">
+            <div class="header">
+              Fashion
+            </div>
+            <div id="fashion" class="description">
+              Your engagement:
+            </div>
+            <div class="description">
+                Avg engagement: 80%
+                <br><br> 
+                People like you paid $0.01. Would you like to contribute?
+            </div>
+          </div>
+        </a>
+        <a class="card"  target="_blank" href="https://www.instagram.com/chrisburkard/">
+            <div class="image">
+                <img src="images/travel/1.jpg" style="height:200px">
+            </div>
+          <div class="content">
+            <div class="header">
+              Travel
+            </div>
+            <div id="travel" class="description">
+                Your engagement:
+            </div>
+            <div class="description">
+                Avg engagement: 50%
+                <br><br> 
+                People like you paid $0.05. Would you like to contribute?
+            </div>
+          </div>
+        </a>
+        <a class="card"  target="_blank" href="https://www.flickr.com/groups/weddingphoto/pool/">
+            <div class="image">
+                <img src="images/wedding/2.jpg" style="height:200px">
+            </div>
+          <div class="content">
+            <div class="header">
+              Wedding
+            </div>
+            <div id="wedding" class="description">
+                Your engagement:
+            </div>
+            <div class="description">
+                Avg engagement: 90%
+                <br><br> 
+                People like you paid $0.09. Would you like to contribute?
+            </div>
+          </div>
+        </a>
+       
+      </div>
+  <style>
+    a {
+      text-decoration: none;
+    }
+  </style>
+
+
+
+</body>
